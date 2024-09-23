@@ -4,6 +4,8 @@ import br.com.gerenciamento.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.Optional;
+
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     @Query("select e from Usuario e where e.email = :email")
@@ -12,4 +14,5 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     @Query("select l from Usuario l where l.user = :user and l.senha = :senha")
     Usuario buscarLogin(String user, String senha);
 
+    Optional<Usuario> findByNome(String carlos);
 }

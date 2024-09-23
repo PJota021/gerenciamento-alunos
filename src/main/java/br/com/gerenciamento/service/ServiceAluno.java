@@ -1,5 +1,6 @@
 package br.com.gerenciamento.service;
 
+import br.com.gerenciamento.enums.Status;
 import br.com.gerenciamento.model.Aluno;
 import br.com.gerenciamento.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class ServiceAluno {
     }
 
     public List<Aluno> findByStatusAtivo() {
-        return this.alunoRepository.findByStatusAtivo();
+        return this.alunoRepository.findByStatusAtivo(Status.ATIVO);
     }
 
     public List<Aluno> findByStatusInativo() {

@@ -31,4 +31,16 @@ public class ServiceUsuario {
     public Usuario loginUser(String user, String senha) {
         return usuarioRepository.buscarLogin(user, senha);
     }
+
+    public void save(Usuario usuario) {
+    }
+
+    public Usuario getById(long l) {
+
+        return null;
+    }
+
+    public void deleteById(long l) {
+
+    }
 }
